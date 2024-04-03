@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3)).then((value) {
-      final isRemember = StorageService.read(key: StorageKeys.isRemember);
+      final isRemember = StorageService.read(key: StorageKeys.isRemember) ?? false;
       if(isRemember){
         context.router.replace(const HomeRoute());
       }else{

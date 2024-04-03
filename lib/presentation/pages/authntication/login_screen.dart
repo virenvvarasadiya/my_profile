@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
     profileBloc.emailCtr.clear();
     profileBloc.passCtr.clear();
     profileBloc.isVisible = true;
-    final isRemember = StorageService.read(key: StorageKeys.isRemember);
+    final isRemember = StorageService.read(key: StorageKeys.isRemember) ?? false;
     profileBloc.add(RememberMeEvent(isRemember: isRemember));
     super.initState();
   }
